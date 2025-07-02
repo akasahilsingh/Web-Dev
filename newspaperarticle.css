@@ -1,0 +1,52 @@
+html {
+  font-size: 24px;
+}
+
+.newspaper {
+  font-family: "Open Sans",sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.name {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-family: "Times New Roman" ,serif;
+  text-transform: uppercase;
+}
+
+.date {
+  text-align: center;
+  
+}
+
+.sub-headline {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+.headline {
+  font-size: 2em;
+  font-weight: bold;
+}
+.author {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.text {
+  letter-spacing: 0.2;
+  line-height: 2em;
+  text-indent: 20px;
+}
+
+
+
+.text::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block;
+   transform: scaleY(2);
+   line-height: 1; 
+}
