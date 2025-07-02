@@ -1,0 +1,75 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.container{
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-shadow: 0 2px 5px grey;
+  margin: 20px auto;
+  
+}
+
+h1{
+  text-align: center;
+}
+
+label, input, button{
+  display: block;
+  
+}
+
+input{
+  border-radius: 5px;
+}
+label,.availabilty{
+  font-size: 1.2em;
+  font-style: arial;
+}
+
+input, select,textarea,button {
+  width: 100%;
+  height: 3vh;
+}
+
+textarea{
+  height: 15vh;
+}
+
+input:focus, textarea:focus {
+  border-color: yellow;
+}
+
+input:invalid ,select:invalid ,textarea:invalid {
+  border-color: red;
+}
+
+input:valid ,select:valid ,textarea:valid {
+  border: 1px solid green;
+}
+
+button{
+  background-color: green;
+  font-size: 1em;
+  padding: 10px 0px;
+  
+}
+button:hover{
+  background-color: lightblue;
+}
+
+.radio-class input[type="radio"]:checked {
+  
+  border-color: black;
+  background-color: red;
+  box-shadow: 0 5px 10px grey;
+}
+
+input:first-of-type{
+  border-radius: 10px;
+}
+
+.option input[type="radio"]:checked + label{
+  color: blue;
+}

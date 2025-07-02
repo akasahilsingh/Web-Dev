@@ -1,0 +1,53 @@
+*{
+  margin: 0px;
+}
+body {
+  background-color: #d6b4f6;
+}
+
+#playing-cards {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 20px;
+}
+
+.card{
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  align-self: flex-start;
+  background-color: #fff;
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.middle {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  background-color: #fff;
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.right {
+  display: flex;
+  align-self: flex-end;
+  background-color: #fff;
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.left, .right , .middle {
+  box-shadow: 2px 4px 5px grey;
+}

@@ -1,0 +1,112 @@
+.portfolio{
+
+    border: 1px solid grey;
+    background-color: rgb(255, 255, 250);
+    margin:auto;
+    
+}
+
+.title{
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.contact{
+    text-align: center;
+    color: rgb(209, 78, 209);
+    margin-right: 10px;
+    
+}
+
+.contact:hover {
+    color: grey;
+}
+
+.contact:link {
+    color: red;
+}
+
+.contact:visit {
+    color: chartreuse;
+}
+
+.contact:active {
+    color: black;
+}
+
+.button{
+    margin-left: 20px;
+    
+}
+
+button{
+    background-color: rgb(217, 175, 217);
+    display: block;
+    margin: 12px;
+    width: 20vw;
+    font: arial;
+}
+
+
+button:hover{
+    background-color: aliceblue;
+}
+
+
+button:active{
+    background-color: green;
+}
+
+
+
+
+
+.intro{
+    margin-left: 20px;
+}
+
+.skill{
+    margin-left: 20px;
+}
+
+.connect{
+    display: block;
+   
+}
+
+label{
+    margin-left: 12px;
+}
+
+input{
+    width: calc(100% - 26px);
+    margin:12px 13px;
+    height: 3vh;
+}
+
+textarea{
+    margin: 12px 12px;
+    width: calc(100% - 24px);
+    height: 20vh;
+
+}
+
+fieldset{
+    margin: 20px;
+}
+
+footer{
+    margin: 20px;
+    color: grey;
+}
+
+footer:hover{
+    color: black;
+    cursor: pointer;
+    
+}
+
