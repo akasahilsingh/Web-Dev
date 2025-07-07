@@ -1,0 +1,95 @@
+:root {
+  --color0: #d0f0c0;
+  --color1: #a8e6a3;
+  --color2: #66cc66;
+  --color3: #228b22;
+  --color4: #556b2f;
+  --color5: #013220;
+  --solid-border: 2px solid black;
+  --dashed-border: 2px solid black;
+}
+
+* {
+  margin: 0;
+  box-sizing: border;
+  padding: 0;
+}
+
+#legend-gradient {
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(
+      90deg,
+      
+      var(--color0) 20%,
+      var(--color1) 20% 30%,
+      
+      var(--color2) 30% 40%,
+      
+      var(--color3) 40% 50%,
+     
+      var(--color4) 50% 60%, 
+      var(--color5) 80% 80% 
+  );
+  margin: 1vh auto;
+  border: 1px solid black;
+}
+
+table {
+  border: 1px solid black;
+  margin: 20vh auto;
+}
+#legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.zero {
+  position: absolute;
+   left: 200px;
+  
+  
+}
+
+.five {
+  position: absolute;
+  left: 345px;
+}
+
+
+
+.available-0 {
+  background-color: var(--color0);
+}
+
+.available-1 {
+  background-color: var(--color1);
+}
+
+.available-1 {
+  background-color: var(--color1);
+}
+
+.available-2 {
+  background-color: var(--color2);
+}
+
+.available-3 {
+  background-color: var(--color3);
+}
+
+.available-4 {
+  background-color: var(--color4);
+}
+
+.available-5 {
+  background-color: var(--color5);
+}
+
+.sharp td {
+  border-bottom: var(--solid-border);
+}
+
+.half td {
+  border-bottom: var(--dashed-border); 
+}
