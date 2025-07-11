@@ -1,0 +1,222 @@
+* ,*::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+      font-family: 'Lato', sans-serif;
+      background-color: #eee;
+      
+}
+
+#header {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  min-height: 75px;
+  background-color: #eee;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+     
+     
+  }
+}
+
+#header > img {
+
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  
+  margin-left: 20px;
+}
+
+#content-wrapper {
+  position: relative;
+  margin: 50px;
+}
+
+li {
+  list-style: none;
+}
+
+#nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  
+  width: 35vw;
+
+}
+
+@media (max-width: 768px) {
+  #nav-bar > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    align-items: center;
+}
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#hero {
+  margin-top: 50px;
+  background-color: #eee;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#form {
+   display: flex;
+   flex-direction: column;
+ 
+}
+
+
+
+#hero [type="email"] {
+  width: 300px;
+  height: 2rem;
+  margin-top: 20px;
+
+}
+
+#hero [type="submit"]{
+  width: 40%;
+  padding: 0;
+  background-color: #f1c40f;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  margin: 0.5rem auto;
+  height: 2rem;
+   transition: transform 1s ease-in-out, background-color 0.3s;
+}
+#hero [type="submit"]:hover{
+ 
+  background-color: darkorange;
+
+}
+
+.container {
+  display: flex;
+  
+}
+
+.icon {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: darkorange;
+  
+
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+#video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 40px auto;
+}
+
+#pricing {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tenor-product, .bass-product ,.valve-product {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  margin: 20px 2px;
+  width: 300px;
+}
+
+.level {
+  background-color: #ddd;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.tenor-product ul,.bass-product ul,.valve-product ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 20px 3px;
+}
+
+.tenor-product button,.bass-product button,.valve-product button {
+  width: 60%;
+  padding: 0;
+  background-color: #f1c40f;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  margin: 20px auto;
+  height: 2rem;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-right: 2rem;
+}
+footer ul {
+
+  
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.3rem;
+ 
+}
+
