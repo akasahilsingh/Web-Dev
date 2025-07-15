@@ -28,6 +28,7 @@ body {
 
 }
 
+
 #navbar > ul {
   display: flex;
   justify-content: flex-end;
@@ -49,6 +50,24 @@ a {
   color: white;
 }
 
+  /* #welcome-section > h1 {
+      font-family: monospace;
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      border-right: 2px solid black;
+      animation: typing 4s steps(16) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 16ch; } /* Adjust '22' to match your character count */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }  */
 
 #navbar > ul li:hover {
   background-color: #c80e13;  
@@ -72,6 +91,7 @@ a {
   justify-content: center;
    align-items: center;
    background-color: #f2d53c;
+   text-align: center;
 }
 
 #welcome-section > h1 {
@@ -79,6 +99,7 @@ a {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 4rem;
+    
     
 }
 
