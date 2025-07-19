@@ -44,7 +44,7 @@ function removeProduct(prodName, quantity) {
              inventory.splice(i,1);
 
         }else {
-          console.log(`Not enough ${prodName.toLowerCase()} available, remaining pieces: ${inventory[i].quantity} `)
+          console.log(`Not enough ${prodName.toLowerCase()} available, remaining pieces: ${inventory[i].quantity}`)
         } 
         return 
       } 
