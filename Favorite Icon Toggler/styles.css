@@ -1,0 +1,23 @@
+
+main {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(100vh - 80vh);
+  
+}
+
+.favorite-icon {
+  border: none;
+  
+  
+}
+
+.filled {
+  background-color: red;
+}
+
+ul {
+    list-style: none;
+}
