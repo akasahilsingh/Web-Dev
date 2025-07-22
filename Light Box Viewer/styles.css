@@ -1,0 +1,65 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+ text-align: center;
+ margin: 80px 0 20px 0;
+ background-color: lightblue;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  
+  /* border: 2px solid red; */
+  gap: 10px;
+}
+
+.gallery-item {
+  max-width: 250px;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+transform: scale(1.05);
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  
+  
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#lightbox-image{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+  margin:  auto; 
+  
+}
+#close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px; 
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  border: none;
+  background: none;
+  z-index: 1;
+}
