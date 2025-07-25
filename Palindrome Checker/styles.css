@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,16 +14,17 @@ body {
 .wrapper {
     /* border: 2px solid white; */
     width: 80%;
-    height:40vh;
+    height: 40vh;
     text-align: center;
     margin: 100px auto;
 }
 
 h1 {
-    margin: 20px ; 
+    margin: 20px;
 }
+
 .input-area {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     border: 2px solid #fff;
     border-radius: 10px;
@@ -40,7 +43,8 @@ h1 {
     padding: 5px;
     border-radius: 10px;
 }
-.info > p {
+
+.info>p {
     margin: 20px;
     font-size: 20px;
 }
