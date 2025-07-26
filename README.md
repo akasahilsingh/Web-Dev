@@ -11,6 +11,16 @@ This repository contains multiple small web development projects. Each project f
 - Responsive design
 - Interactive features with JavaScript
 
+## Why This Repo?
+
+This repository documents my journey in learning web development. Each project here is a hands-on exercise to practice and improve my skills in HTML, CSS, and JavaScript.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
 ## Projects
 
 Below are some of the projects included in this repository (add or update this list as you add more!):
@@ -57,7 +67,9 @@ Below are some of the projects included in this repository (add or update this l
    ```bash
    git clone https://github.com/akasahilsingh/Web-Dev.git
 
+## License
 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
 
