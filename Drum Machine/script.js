@@ -8,6 +8,9 @@ const powerBtn = document.getElementById("powerbtn");
 
 const powerMsg = document.getElementById("power");
 
+const volumeSlider = document.getElementById("volume");
+
+const drumMachine = document.getElementById("drum-machine");
 const drumPadSound = [
     {
    Key: "Q",
@@ -65,6 +68,8 @@ const drumPadSound = [
   }
 ];
 
+let powerOn = true;
+
 drumPadArray.forEach(pad => {
   const key = pad.textContent.trim();
   const soundObj = drumPadSound.find(pad => pad.Key === key);
@@ -78,6 +83,8 @@ drumPadArray.forEach(pad => {
 });
 
 function playSound(key) {
+
+  if(!powerOn) return;
   const audio = document.getElementById(key)
   const soundObj = drumPadSound.find(pad => pad.Key === key)
   
@@ -95,6 +102,7 @@ function playSound(key) {
 
 drumPadArray.forEach(pad => {
 pad.addEventListener("click", ()=> {
+  if(!powerOn) return;
   const key = pad.textContent.trim();
 playSound(key);
 
@@ -113,6 +121,7 @@ pad.style.color = ""
 });
 
 document.addEventListener("keydown", (event)=> {
+  if(!powerOn) return;
   const key = event.key.toUpperCase();
   
  const keyPressed = drumPadArray.find(keyUsed => keyUsed.textContent.trim() === key);
@@ -130,10 +139,34 @@ keyPressed.style.color = ""
 
 
 powerBtn.addEventListener("click",()=> {
-
+  powerOn = !powerOn;
   if(powerMsg.textContent=== "Power: On"){
   powerMsg.textContent = "Power: Off"
   } else { powerMsg.textContent = "Power: On"
   }
-})
 
+  if(!powerOn) {
+    // const pad = drumPadArray.forEach(pad=> pad.style.backgroundColor = "rgba(0,0,0,0.8)")
+    drumMachine.style.backgroundColor = "rgba(0,0,0,0.5)"
+    display.textContent ="";
+   
+  } else {
+    drumMachine.style.backgroundColor = "";
+
+  }
+  
+});
+
+function setVolume(volume) {
+  const audioElement = document.querySelectorAll(".clip");
+
+  audioElement.forEach(audio => {
+    audio.volume = volume;
+  } );
+}
+
+
+volumeSlider.addEventListener("input", (event) => {
+  const newVolume = parseFloat(event.target.value);
+  setVolume(newVolume);
+})
