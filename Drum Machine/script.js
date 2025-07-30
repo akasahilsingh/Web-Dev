@@ -4,6 +4,10 @@ const drumPadArray = Array.from(drumPad);
 
 const display = document.getElementById("display");
 
+const powerBtn = document.getElementById("powerbtn");
+
+const powerMsg = document.getElementById("power");
+
 const drumPadSound = [
     {
    Key: "Q",
@@ -124,4 +128,12 @@ keyPressed.style.color = ""
 }
 })
 
+
+powerBtn.addEventListener("click",()=> {
+
+  if(powerMsg.textContent=== "Power: On"){
+  powerMsg.textContent = "Power: Off"
+  } else { powerMsg.textContent = "Power: On"
+  }
+})
 
