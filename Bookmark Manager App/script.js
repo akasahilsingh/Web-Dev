@@ -24,6 +24,8 @@ const name = document.getElementById("name");
 
 const url = document.getElementById("url");
 
+const deleteBtn = document.getElementById("delete-bookmark-button");
+
 const bookMarkData = JSON.parse(localStorage.getItem("data")) || [];
 
 const currentBookmark = {};
@@ -33,10 +35,13 @@ const addOrUpdateBookMark = () => {
     alert("Please Provide At least one");
     return;
   }
+  const selected  = categoryDropdown.options[categoryDropdown.selectedIndex].text;
+  
   const bookMarkObj = {
     id: `${name.value.trim().toLowerCase().split(" ").join("-")}-${Date.now()}`,
     name: name.value,
     url: url.value,
+    category: selected
   };
 
   bookMarkData.unshift(bookMarkObj);
@@ -48,19 +53,44 @@ const addOrUpdateBookMark = () => {
 const updateCategoryList = () => {
   categoryList.innerHTML = "";
 
+  
+  // console.log(selected)
+
   bookMarkData.forEach(({ id, name, url }) => {
     categoryList.innerHTML += `
     <div class="bookmark" id="${id}">
-    <input type="radio" style="margin-right: 10px">
+    <input type="radio" value="${id}" name="radio" style="margin-right: 10px">
     
     <a href="${url}" target="_blank">${name}</a>
+    
     </div>
     `;
   });
+
 };
 
 if (bookMarkData.length) {
   updateCategoryList();
+} else {
+  categoryList.style.color = "black"
+  categoryList.textContent = "No Bookmarks Found"
+}
+
+const deleteBookMark = (buttonEl) => {
+  
+  // console.log("buttonEl:", buttonEl);
+  // console.log("parentElement:", buttonEl?.parentElement);
+  // console.log("parent ID:", buttonEl?.parentElement?.id);
+
+  const dataArrIndex  = bookMarkData.findIndex(
+  (item)=> item.id === buttonEl.parentElement.id
+  );
+  
+  // buttonEl.parentElement.remove();
+  bookMarkData.splice(dataArrIndex,1);
+  localStorage.setItem("data",JSON.stringify(bookMarkData));
+  updateCategoryList();
+   
 }
 
 addBookMarkBtn.addEventListener("click", () => {
@@ -91,5 +121,11 @@ closeListBtn.addEventListener("click", () => {
 
 addBookMarkBtnForm.addEventListener("click", () => {
   addOrUpdateBookMark();
-  console.log("bookmark added");
+  formSection.classList.add("hidden");
+   mainSection.classList.toggle("hidden");
+   name.value = "";
+   url.value = "";
+  // console.log("bookmark added");
 });
+
+deleteBtn.addEventListener("click", function() {deleteBookMark(this)})
