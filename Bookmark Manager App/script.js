@@ -40,7 +40,7 @@ const addOrUpdateBookMark = () => {
   const bookMarkObj = {
     id: `${name.value.trim().toLowerCase().split(" ").join("-")}-${Date.now()}`,
     name: name.value,
-    url: url.value,
+    url: formatURl(url.value),
     category: selected
   };
 
@@ -50,8 +50,18 @@ const addOrUpdateBookMark = () => {
   console.log(bookMarkObj);
 };
 
+const formatURl = (rawUrl) => {
+  const trimmed = rawUrl.trim();
+  if(!/^https?:\/\//i.test(trimmed)){
+    return `https://${trimmed}`;
+  }
+  return trimmed
+}
+
 const updateCategoryList = () => {
   categoryList.innerHTML = "";
+
+// const updateCategoryList = (sele)
 
   if(!bookMarkData.length){
   categoryList.style.color = "black";
@@ -60,7 +70,6 @@ const updateCategoryList = () => {
 }
   
   // console.log(selected)
-
   bookMarkData.forEach(({ id, name, url }) => {
     categoryList.innerHTML += `
     <div class="bookmark" id="${id}">
