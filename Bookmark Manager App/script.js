@@ -53,13 +53,18 @@ const addOrUpdateBookMark = () => {
 const updateCategoryList = () => {
   categoryList.innerHTML = "";
 
+  if(!bookMarkData.length){
+  categoryList.style.color = "black";
+  categoryList.textContent = "No Bookmarks Found";
+  return;
+}
   
   // console.log(selected)
 
   bookMarkData.forEach(({ id, name, url }) => {
     categoryList.innerHTML += `
     <div class="bookmark" id="${id}">
-    <input type="radio" value="${id}" name="radio" style="margin-right: 10px">
+    <input type="radio" id="${id}" name="radio" style="margin-right: 10px">
     
     <a href="${url}" target="_blank">${name}</a>
     
@@ -69,28 +74,32 @@ const updateCategoryList = () => {
 
 };
 
-if (bookMarkData.length) {
-  updateCategoryList();
-} else {
-  categoryList.style.color = "black"
-  categoryList.textContent = "No Bookmarks Found"
-}
+
+updateCategoryList(); // called here so that No bookmarks Found message is handeled correctly
+
 
 const deleteBookMark = (buttonEl) => {
   
-  // console.log("buttonEl:", buttonEl);
-  // console.log("parentElement:", buttonEl?.parentElement);
-  // console.log("parent ID:", buttonEl?.parentElement?.id);
+  const selectedRadio = document.querySelector('input[name="radio"]:checked');
+  console.log("buttonEl:", buttonEl);
+  console.log("parentElement:", buttonEl?.parentElement);
+  console.log("parent ID:", buttonEl?.parentElement?.id);
+
+  if(!selectedRadio && bookMarkData.length){
+    alert("Please Select one to delete");
+    return;
+  }
 
   const dataArrIndex  = bookMarkData.findIndex(
-  (item)=> item.id === buttonEl.parentElement.id
+  (item)=> item.id === selectedRadio.id
   );
   
   // buttonEl.parentElement.remove();
   bookMarkData.splice(dataArrIndex,1);
   localStorage.setItem("data",JSON.stringify(bookMarkData));
   updateCategoryList();
-   
+  console.log("DOM id:", buttonEl.parentElement.id)
+ console.log("Data item ids:", bookMarkData.map(b => b.id));   
 }
 
 addBookMarkBtn.addEventListener("click", () => {
