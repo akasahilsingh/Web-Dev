@@ -46,7 +46,7 @@ const addOrUpdateBookMark = () => {
 
   bookMarkData.unshift(bookMarkObj);
   localStorage.setItem("data", JSON.stringify(bookMarkData));
-  updateCategoryList();
+  updateCategoryList(selected);
   console.log(bookMarkObj);
 };
 
@@ -58,19 +58,21 @@ const formatURl = (rawUrl) => {
   return trimmed
 }
 
-const updateCategoryList = () => {
-  categoryList.innerHTML = "";
+const selectedDropdown = categoryDropdown.value;
 
-// const updateCategoryList = (sele)
+const updateCategoryList = (selectedCategory = selectedDropdown) => {
+  
 
-  if(!bookMarkData.length){
+ const filteredBookMarkData = bookMarkData.filter(b => b.category === selectedCategory)
+
+  if(!filteredBookMarkData.length){
   categoryList.style.color = "black";
   categoryList.textContent = "No Bookmarks Found";
   return;
 }
-  
+  categoryList.innerHTML = "";
   // console.log(selected)
-  bookMarkData.forEach(({ id, name, url }) => {
+  filteredBookMarkData.forEach(({ id, name, url }) => {
     categoryList.innerHTML += `
     <div class="bookmark" id="${id}">
     <input type="radio" id="${id}" name="radio" style="margin-right: 10px">
@@ -130,6 +132,7 @@ viewCategoryBtn.addEventListener("click", () => {
   bookMarkCategoryName.forEach((el) => {
     el.textContent = selected;
   });
+  updateCategoryList(selected);
 });
 
 closeListBtn.addEventListener("click", () => {
